@@ -1,0 +1,2 @@
+rootProject.name='myAndroidChat'
+include ':app'
