@@ -117,8 +117,6 @@ public class ChatActivity extends AppCompatActivity {
 
         mTitleView= findViewById(R.id.custom_bar_name);
         mLastSeenView=findViewById(R.id.custom_bar_lastseen);
-       // mProfileImage= findViewById(R.id.custom_bar_image);
-
         mChatAddBtn=findViewById(R.id.chat_add_btn);
         mChatSendBtn=findViewById(R.id.chat_send_btn);
         mChatMessageView=findViewById(R.id.chat_message_view);
@@ -232,7 +230,6 @@ public class ChatActivity extends AppCompatActivity {
             public void onRefresh() {
                 mCurrentPAge++;
                 itemPos=0;
-
                 loadMoreMessages();
             }
         });
@@ -257,8 +254,6 @@ public class ChatActivity extends AppCompatActivity {
         if(requestCode==GALLERY_PICK && resultCode == RESULT_OK){
 
             Uri imageUri = data.getData();
-//            final String current_user_ref = "messages/" + mCurrentUserId +"/" + mChatUser;
-//            final String chat_user_ref = "messages/" + mChatUser +"/" + mCurrentUserId;
 
             DatabaseReference user_message_push = mRootRef.child("messages").child(mCurrentUserId).child(mChatUser).push();
 
@@ -276,8 +271,6 @@ public class ChatActivity extends AppCompatActivity {
                 }
             });
         }
-
-
     }
 
 
@@ -353,14 +346,8 @@ public class ChatActivity extends AppCompatActivity {
                 if(itemPos==1){
                     mLastKey=messageKey;
                 }
-
-
                 mAdapter.notifyDataSetChanged();
-
-            //    mMessagesList.scrollToPosition(messagesList.size()-1); // ustawia widok listy na dole przy załadowaniu
-
                 mRefreshLayout.setRefreshing(false);
-
                 mLinearLayout.scrollToPositionWithOffset(itemPos,0);
 
 
@@ -386,9 +373,6 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
-
-
-
     }
 
 
@@ -453,7 +437,6 @@ public class ChatActivity extends AppCompatActivity {
 
             String current_user_ref="messages/" + mCurrentUserId+"/"+mChatUser;
             String chat_user_ref="messages/"+mChatUser+"/"+mCurrentUserId;
-
 
             DatabaseReference user_message_push=mRootRef.child("messages").child(mCurrentUserId).child(mChatUser).push();
 

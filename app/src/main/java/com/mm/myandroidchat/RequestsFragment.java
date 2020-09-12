@@ -120,33 +120,7 @@ public class RequestsFragment extends Fragment {
 
                 final String list_user_id=getRef(position).getKey();
                 Query lastRequestQuery=mRequestDatabase.child(list_user_id);
-//                lastRequestQuery.addChildEventListener(new ChildEventListener() {
-//                    @Override
-//                    public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//                    //    String req_type= dataSnapshot.child("request_type").getValue().toString();
-//                    //    holder.setRequestType(req_type);
-//                    }
-//
-//                    @Override
-//                    public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-//
-//                    }
-//
-//                    @Override
-//                    public void onCancelled(@NonNull DatabaseError databaseError) {
-//
-//                    }
-//                });
+
                 mRequestDatabase.child(list_user_id).addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

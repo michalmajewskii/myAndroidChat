@@ -101,7 +101,6 @@ public class SettingsActivity extends AppCompatActivity {
                 mStatus.setText(status);
 
                 if(!image.equals("default")) {
-                    //setPictureFromURL() - ustawic defoultowe zdjecie;
 
                     Picasso.get().load(image).networkPolicy(NetworkPolicy.OFFLINE).into(mImage, new Callback() {
                         @Override
@@ -188,9 +187,6 @@ public class SettingsActivity extends AppCompatActivity {
 
                 final String current_user_id = mCurrentUser.getUid();
 
-
-
-
                 File thumb_filePath = new File(resultUri.getPath());
 
                 Bitmap thumb_bitmap = null;
@@ -209,13 +205,6 @@ public class SettingsActivity extends AppCompatActivity {
                 final byte[] thumb_byte = baos.toByteArray();
 
                 final StorageReference thumb_filepath = mImageStorage.child("profile_images").child("thumbs").child(current_user_id +".jpg");
-
-
-
-
-
-
-               // StorageReference filepath = mImageStorage.child("profile_images").child(current_user_id + ".jpg");
 
                 final StorageReference reference= FirebaseStorage.getInstance().getReference().child("profile_images").child(current_user_id +".jpg");
 

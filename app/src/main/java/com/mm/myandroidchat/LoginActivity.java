@@ -46,11 +46,6 @@ public class LoginActivity extends AppCompatActivity {
 
         mAuth= FirebaseAuth.getInstance();
 
-//        mToolbar = findViewById(R.id.login_toolbar);
-//        setSupportActionBar(mToolbar);
-//        getActionBar().setDisplayHomeAsUpEnabled(true);
-//        getActionBar().setTitle("Login");
-
         mLoginProgress= new ProgressDialog(this);
 
         mLoginEmail = findViewById(R.id.login_email);
@@ -73,6 +68,8 @@ public class LoginActivity extends AppCompatActivity {
                     mLoginProgress.show();
 
                     loginUser(email,password);
+
+                    mLoginProgress.dismiss();
 
                 }
 
@@ -117,8 +114,6 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
-
-
 
     }
 

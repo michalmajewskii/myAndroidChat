@@ -15,7 +15,6 @@ public class FirebaseMessagingService extends com.google.firebase.messaging.Fire
         super.onMessageReceived(remoteMessage);
 
 
-//TODO NIE DZIALA HEHE :D
         NotificationCompat.Builder newMessageNotification = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setContentTitle("New Friend Request")

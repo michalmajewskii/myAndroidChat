@@ -110,8 +110,6 @@ public class FriendsFragment extends Fragment {
 
                         }
 
-
-
                         holder.setDisplayName(username);
                         holder.setUserImage(string);
 
@@ -137,10 +135,7 @@ public class FriendsFragment extends Fragment {
                                             chatIntent.putExtra("value of userid", list_user_id);
                                             chatIntent.putExtra("user_name",username);
                                             startActivity(chatIntent);
-
                                         }
-
-
                                     }
                                 });
                                 builder.show();
@@ -188,7 +183,6 @@ public class FriendsFragment extends Fragment {
         public void setDisplayName (String name){
             TextView userNameView = mView.findViewById(R.id.user_single_name);
             userNameView.setText(name);
-
         }
 
 
@@ -206,11 +200,6 @@ public class FriendsFragment extends Fragment {
             }else {
                 userOnlineView.setVisibility(View.INVISIBLE);
             }
-
-
         }
-
-
     }
-
 }

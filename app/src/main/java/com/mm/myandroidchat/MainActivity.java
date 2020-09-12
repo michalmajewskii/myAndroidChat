@@ -76,25 +76,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        FirebaseUser currentUser = mAuth.getCurrentUser();
-//
-//        if(currentUser != null){
-//            mUserRef.child("online").setValue(ServerValue.TIMESTAMP); //when online is true, that means that user is online. If online is Timestamp - user is offline
-//          //  mUserRef.child("lastSeen").setValue(ServerValue.TIMESTAMP);
-//
-//
-//
-//        }
-//
-//
-//
-//    }
-
-    private void sendToStart() {
+    void sendToStart() {
         Intent startIntent = new Intent(MainActivity.this, StartActivity.class);
         startActivity(startIntent);
         finish();
@@ -106,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreateOptionsMenu(menu);
 
         getMenuInflater().inflate(R.menu.main_menu,menu);
-
-
 
         return true;
     }

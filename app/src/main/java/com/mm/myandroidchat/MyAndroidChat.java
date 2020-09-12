@@ -43,8 +43,6 @@ public class MyAndroidChat extends Application {
 
                     if (dataSnapshot != null) {
                         mUserDatabase.child("online").onDisconnect().setValue(ServerValue.TIMESTAMP);
-                        //mUserDatabase.child("lastSeen").setValue(ServerValue.TIMESTAMP);
-
                     }
 
 

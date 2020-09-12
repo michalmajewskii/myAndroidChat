@@ -79,6 +79,7 @@ public class RegisterActivity extends AppCompatActivity {
                         mRegProgress.show();
 
                         register_user(display_name, email, password);
+                        mRegProgress.dismiss();
                     }else{
                         Toast.makeText(RegisterActivity.this, "Create your password using 6 characters or more.",Toast.LENGTH_LONG).show();
                     }
@@ -131,7 +132,5 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-
-
 
 }

@@ -208,16 +208,8 @@ public class ProfileActivity extends AppCompatActivity {
                             mCurrent_state="req_sent";
                             mProfileSendReqBtn.setText("Cancel Friend Request");
 
-
-
-
                         }
                     });
-
-
-
-
-
 
                     }
 
@@ -277,11 +269,9 @@ public class ProfileActivity extends AppCompatActivity {
                             Toast.makeText(ProfileActivity.this,error,Toast.LENGTH_SHORT).show();
                         }
 
-
                     }
 
                 });
-
 
             }
 
@@ -318,11 +308,6 @@ public class ProfileActivity extends AppCompatActivity {
                         });
 
                     }
-
-
-
-
-
 
                 }
             });

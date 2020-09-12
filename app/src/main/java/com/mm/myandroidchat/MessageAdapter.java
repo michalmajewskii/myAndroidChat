@@ -49,11 +49,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_item_left, parent,false);
             return new MessageViewHolder(view);
         }
-
-
-       // View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.message_single_layout, parent,false);
-
-       // return new MessageViewHolder(view);
     }
 
 
@@ -72,7 +67,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 final String current_name = dataSnapshot.child("name").getValue().toString();
-             //   holder.messageName.setText(current_name);
+
 
                 if(!from_user.equals(current_user_id)) {
                     final String current_image = dataSnapshot.child("thumb_image").getValue().toString();
@@ -82,23 +77,11 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
             }
 
-
-
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-
-
-//        if(from_user.equals(current_user_id)){
-//
-//        }else {
-//            ((MessageViewHolder)holder).messageText.setBackgroundResource(R.drawable.message_text_background);
-//           ((MessageViewHolder)holder).messageText.setTextColor(Color.WHITE);
-//        }
-
 
         if (message_type.equals("text")) {
             holder.messageText.setText(c.getMessage());
@@ -111,11 +94,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
             Picasso.get().load(c.getMessage()).placeholder(R.drawable.avatar_1).into(holder.messageImage); //TODO insert in placeholder thumbnail
         }
-
-
-
-
-
 
     }
 
@@ -138,19 +116,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             super(view);
 
             mView=view;
-//            messageText=view.findViewById(R.id.message_text);
-//            profileImage=view.findViewById(R.id.message_user_image);
-//           messageName=view.findViewById(R.id.message_name);
             messageImage=view.findViewById(R.id.message_imageView);
             messageText=view.findViewById(R.id.show_message);
             profileImage=view.findViewById(R.id.message_user_image);
-
-
         }
-
-
-
-
         }
 
 
@@ -163,14 +132,5 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             if(from_user.equals(firebaseUser.getUid())){
                 return MSG_TYPE_RIGHT;
             }else return MSG_TYPE_LEFT;
-
-
         }
-
-
-
     }
-
-
-
-

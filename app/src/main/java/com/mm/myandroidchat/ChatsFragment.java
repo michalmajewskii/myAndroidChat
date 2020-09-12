@@ -69,7 +69,7 @@ public class ChatsFragment extends Fragment {
 
 
         LinearLayoutManager linearLayoutManager=new LinearLayoutManager((getContext()));
-        linearLayoutManager.setReverseLayout(true); //odwrac kolejnosc dodawania do recycleview
+        linearLayoutManager.setReverseLayout(true); //odwraca kolejnosc dodawania do recycleview
         linearLayoutManager.setStackFromEnd(true);
 
 
@@ -140,10 +140,7 @@ public class ChatsFragment extends Fragment {
 
                                 }
                             });
-
-
                             }
-
                     }
                 }
 
@@ -271,10 +268,6 @@ public class ChatsFragment extends Fragment {
             }else {
                 userOnlineView.setVisibility(View.INVISIBLE);
             }
-
-
         }
-
-
     }
 }
